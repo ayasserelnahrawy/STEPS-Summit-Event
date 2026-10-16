@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script src="./doc-page.js"></script>
+<style>
+body{margin:0;background:#eceef4;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#0b1351;-webkit-font-smoothing:antialiased}
+a{color:#551FF8}a:hover{color:#F735A7}
+doc-page:not(:defined){visibility:hidden}
+</style>
+</helmet>
+
+<sc-if value="{{ isPrint }}" hint-placeholder-val="{{ true }}">
+  <doc-page width="148mm" height="210mm">
+    <sc-for list="{{ partners }}" as="p" hint-placeholder-count="2">
+      <section class="page" data-screen-label="{{ p.label }}">
+        <div style="height:100%;display:flex;flex-direction:column;background:#fff;overflow:hidden">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:6mm;padding:6mm 10mm 5mm">
+            <img src="./assets/sm/steps.png" alt="Steps Summit — Connecting Minds" style="height:15mm;width:auto;display:block"></img>
+            <div style="display:flex;align-items:center;gap:2.5mm">
+              <div style="font-size:6.5pt;letter-spacing:0.14em;font-weight:700;line-height:1.15;text-align:right">POWERED<br>BY</div>
+              <img src="./assets/sm/ahc.png" alt="AHC" style="height:8mm;width:auto;display:block"></img>
+            </div>
+          </div>
+          <div style="background:#0b1351;color:#fff;padding:7mm 10mm;display:flex;flex-direction:column;gap:5mm">
+            <div style="display:flex;flex-direction:column;gap:1.5mm">
+              <div style="font-family:Figtree,sans-serif;font-size:8.5pt;letter-spacing:0.16em;font-weight:700;color:#11D1D0">EXCLUSIVE INTERVIEWS · MEDIA SCHEDULE</div>
+              <div style="font-family:Figtree,sans-serif;font-weight:700;font-size:{{ p.nameSize }};line-height:1.05;letter-spacing:-0.015em;text-wrap:balance">{{ p.name }}</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:6mm">
+              <div style="display:flex;flex-direction:column;gap:1.5mm">
+                <div style="font-size:8pt;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:#CBDF38">Your interview window</div>
+                <div style="display:flex;align-items:baseline;gap:2.5mm">
+                  <div style="font-family:Figtree,sans-serif;font-weight:800;font-size:27pt;line-height:1;letter-spacing:-0.02em">{{ p.window }}</div>
+                  <div style="font-family:Figtree,sans-serif;font-weight:700;font-size:12pt;color:#11D1D0">PM</div>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:1.2mm;flex:none">
+                <div style="background:#fff;padding:1.5mm;border-radius:1.5mm"><div style="width:20mm;height:20mm"><sc-if value="{{ p.hasQr }}" hint-placeholder-val="{{ false }}"><img src="{{ p.qr }}" alt="" style="width:20mm;height:20mm;image-rendering:pixelated;display:block"></img></sc-if></div></div>
+                <div style="font-size:6pt;letter-spacing:0.12em;text-transform:uppercase;color:#c9cdf0">Scan for web version</div>
+              </div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(8,1fr);height:9mm;background:#0b1351;flex:none">
+            <div style="background:#551FF8;border-radius:0 0 100% 0"></div>
+            <div style="display:flex;align-items:flex-end"><div style="width:100%;height:50%;background:#11D1D0;border-radius:999px 999px 0 0"></div></div>
+            <div style="background:#F735A7;border-radius:100% 0 0 0"></div>
+            <div style="background:#CBDF38;display:flex;align-items:center;justify-content:center"><div style="width:5mm;height:5mm;border-radius:50%;background:#0b1351"></div></div>
+            <div style="background:#FB6F41;border-radius:0 100% 0 0"></div>
+            <div style="background:#B92DE5;display:flex;align-items:flex-start"><div style="width:100%;height:50%;background:#fff;border-radius:0 0 999px 999px"></div></div>
+            <div style="background:#11D1D0;border-radius:0 0 0 100%"></div>
+            <div style="background:#551FF8;display:flex;align-items:flex-end"><div style="width:100%;height:100%;background:#F735A7;border-radius:100% 0 0 0"></div></div>
+          </div>
+          <div style="flex:1;min-height:0;padding:5mm 10mm 0;display:flex;flex-direction:column;gap:2mm">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:4mm">
+              <div style="font-size:8pt;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:#551FF8;white-space:nowrap">Media partners</div>
+              <div style="font-size:8pt;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:#3a4170;white-space:nowrap">{{ p.countLabel }}</div>
+            </div>
+            <div style="flex:1;min-height:0;display:flex;flex-direction:column">
+              <sc-for list="{{ p.media }}" as="m" hint-placeholder-count="4">
+                <div style="flex:1 1 0;max-height:13mm;min-height:7mm;display:flex;align-items:center;gap:4mm;border-top:0.3mm solid #e3e5ef">
+                  <div style="width:7mm;height:7mm;border-radius:50%;flex:none;background:{{ m.color }};color:{{ m.ink }};display:flex;align-items:center;justify-content:center;font-family:Figtree,sans-serif;font-weight:800;font-size:8.5pt">{{ m.num }}</div>
+                  <div style="flex:1;font-family:Figtree,sans-serif;font-weight:700;font-size:13pt">{{ m.name }}</div>
+                  <sc-if value="{{ m.hasTime }}" hint-placeholder-val="{{ false }}">
+                    <div style="font-family:Figtree,sans-serif;font-weight:700;font-size:10pt;background:#0b1351;color:#fff;padding:1mm 2.5mm;border-radius:999px">{{ m.time }}</div>
+                  </sc-if>
+                  <div style="width:4.5mm;height:4.5mm;border:0.4mm solid #0b1351;border-radius:1mm;flex:none"></div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="flex:none;padding:4mm 10mm 0;border-top:0.3mm solid #e3e5ef;display:grid;grid-template-columns:0.8fr 1fr 1.5fr;gap:5mm">
+            <div style="display:flex;flex-direction:column;gap:2mm;align-items:center">
+              <div style="font-size:6.5pt;letter-spacing:0.14em;font-weight:700;text-transform:uppercase">Main sponsor</div>
+              <img src="./assets/sm/main.png" alt="SODIC Sports Club" style="height:17mm;width:auto;display:block"></img>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2mm;align-items:center">
+              <div style="font-size:6.5pt;letter-spacing:0.14em;font-weight:700;text-transform:uppercase">Platinum sponsor</div>
+              <div style="height:17mm;display:flex;align-items:center"><img src="./assets/sm/plat.png" alt="Swiss Gold" style="height:13mm;width:auto;display:block"></img></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2mm;align-items:center">
+              <div style="font-size:6.5pt;letter-spacing:0.14em;font-weight:700;text-transform:uppercase">Silver sponsors</div>
+              <div style="height:17mm;display:flex;align-items:center;justify-content:center;gap:4mm">
+                <img src="./assets/sm/silver1.png" alt="Wycombe Abbey Cairo East" style="height:10mm;width:auto;display:block"></img>
+                <img src="./assets/sm/silver2.png" alt="WMC-EF" style="height:5.5mm;width:auto;display:block"></img>
+              </div>
+            </div>
+          </div>
+          <div style="flex:none;display:flex;justify-content:center;padding:4mm 10mm 5mm">
+            <img src="./assets/sm/cm.png" alt="Connecting Minds" style="height:6mm;width:auto;display:block"></img>
+          </div>
+        </div>
+      </section>
+    </sc-for>
+  </doc-page>
+</sc-if>
+
+<sc-if value="{{ isWeb }}" hint-placeholder-val="{{ false }}">
+  <div style="min-height:100vh;background:#fff;max-width:560px;margin:0 auto;display:flex;flex-direction:column">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 22px 16px">
+      <img src="./assets/sm/steps.png" alt="Steps Summit — Connecting Minds" style="height:52px;width:auto;display:block"></img>
+      <div style="display:flex;align-items:center;gap:8px">
+        <div style="font-size:9px;letter-spacing:0.14em;font-weight:700;line-height:1.15;text-align:right">POWERED<br>BY</div>
+        <img src="./assets/sm/ahc.png" alt="AHC" style="height:28px;width:auto;display:block"></img>
+      </div>
+    </div>
+    <div style="background:#0b1351;color:#fff;padding:24px 22px;display:flex;flex-direction:column;gap:18px">
+      <sc-if value="{{ found }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="font-family:Figtree,sans-serif;font-size:11px;letter-spacing:0.16em;font-weight:700;color:#11D1D0">EXCLUSIVE INTERVIEWS · MEDIA SCHEDULE</div>
+          <div style="font-family:Figtree,sans-serif;font-weight:700;font-size:30px;line-height:1.05;letter-spacing:-0.015em;text-wrap:balance">{{ wp.name }}</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;color:#CBDF38">Your interview window</div>
+          <div style="display:flex;align-items:baseline;gap:8px">
+            <div style="font-family:Figtree,sans-serif;font-weight:800;font-size:42px;line-height:1;letter-spacing:-0.02em">{{ wp.window }}</div>
+            <div style="font-family:Figtree,sans-serif;font-weight:700;font-size:18px;color:#11D1D0">PM</div>
+          </div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ notFound }}" hint-placeholder-val="{{ false }}">
+        <div style="font-size:16px;line-height:1.5">Partner not found. Please check the QR code or ask the media desk.</div>
+      </sc-if>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(8,1fr);aspect-ratio:8/1;background:#0b1351">
+      <div style="background:#551FF8;border-radius:0 0 100% 0"></div>
+      <div style="display:flex;align-items:flex-end"><div style="width:100%;height:50%;background:#11D1D0;border-radius:999px 999px 0 0"></div></div>
+      <div style="background:#F735A7;border-radius:100% 0 0 0"></div>
+      <div style="background:#CBDF38;display:flex;align-items:center;justify-content:center"><div style="width:55%;height:55%;border-radius:50%;background:#0b1351"></div></div>
+      <div style="background:#FB6F41;border-radius:0 100% 0 0"></div>
+      <div style="background:#B92DE5;display:flex;align-items:flex-start"><div style="width:100%;height:50%;background:#fff;border-radius:0 0 999px 999px"></div></div>
+      <div style="background:#11D1D0;border-radius:0 0 0 100%"></div>
+      <div style="background:#551FF8;display:flex;align-items:flex-end"><div style="width:100%;height:100%;background:#F735A7;border-radius:100% 0 0 0"></div></div>
+    </div>
+    <sc-if value="{{ found }}" hint-placeholder-val="{{ true }}">
+      <div style="padding:22px;display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;justify-content:space-between;gap:12px;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700">
+          <div style="color:#551FF8">Media partners</div><div style="color:#3a4170">{{ wp.countLabel }}</div>
+        </div>
+        <sc-for list="{{ wp.media }}" as="m" hint-placeholder-count="4">
+          <div style="display:flex;align-items:center;gap:14px;padding:14px 0;border-top:1px solid #e3e5ef">
+            <div style="width:30px;height:30px;border-radius:50%;flex:none;background:{{ m.color }};color:{{ m.ink }};display:flex;align-items:center;justify-content:center;font-family:Figtree,sans-serif;font-weight:800;font-size:12px">{{ m.num }}</div>
+            <div style="flex:1;font-family:Figtree,sans-serif;font-weight:700;font-size:18px">{{ m.name }}</div>
+            <sc-if value="{{ m.hasTime }}" hint-placeholder-val="{{ false }}">
+              <div style="font-family:Figtree,sans-serif;font-weight:700;font-size:13px;background:#0b1351;color:#fff;padding:5px 10px;border-radius:999px">{{ m.time }}</div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+    <div style="margin-top:auto;padding:20px 22px;border-top:1px solid #e3e5ef;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px">
+      <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
+        <div style="font-size:9px;letter-spacing:0.14em;font-weight:700;text-transform:uppercase">Main sponsor</div>
+        <img src="./assets/sm/main.png" alt="SODIC Sports Club" style="height:64px;width:auto;display:block"></img>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
+        <div style="font-size:9px;letter-spacing:0.14em;font-weight:700;text-transform:uppercase">Platinum sponsor</div>
+        <div style="height:64px;display:flex;align-items:center"><img src="./assets/sm/plat.png" alt="Swiss Gold" style="height:48px;width:auto;display:block"></img></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
+        <div style="font-size:9px;letter-spacing:0.14em;font-weight:700;text-transform:uppercase">Silver sponsors</div>
+        <div style="height:64px;display:flex;align-items:center;gap:14px">
+          <img src="./assets/sm/silver1.png" alt="Wycombe Abbey Cairo East" style="height:38px;width:auto;display:block"></img>
+          <img src="./assets/sm/silver2.png" alt="WMC-EF" style="height:20px;width:auto;display:block"></img>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;padding:6px 22px 24px">
+      <img src="./assets/sm/cm.png" alt="Connecting Minds" style="height:24px;width:auto;display:block"></img>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;view&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Print sheets (A5)&quot;,&quot;Web page (QR target)&quot;],&quot;default&quot;:&quot;Print sheets (A5)&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;View&quot;},&quot;webPartner&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;SODIC&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;View&quot;},&quot;qrBaseUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;QR code&quot;}}">
+const MEDIA = [
+  ['Raht Baly', '#11D1D0', '#0b1351'], ['Cairo Spots', '#FB6F41', '#0b1351'], ['Identity', '#F735A7', '#0b1351'],
+  ['AS Media', '#551FF8', '#ffffff'], ['The Briefline', '#B92DE5', '#ffffff'], ['Lemonade', '#CBDF38', '#0b1351']
+];
+const RAW = `Wycombe Abbey Cairo East|011111|3:35-3:55
+SODIC|111101|5:00-5:20
+Swiss Gold|011100|5:00-5:20
+Belvedere International School|000101|4:50-5:10
+Royal British|010101|2:30-3:00
+Under 5|100100|2:45-3:00
+Club 5|010110|2:45-3:00
+Yabi|110101|7:00-7:15
+Noya|100110|5:20-6:00
+Stationary Hub|100110|5:00-5:20
+Aspire International School|110110|4:50-5:10
+Gmind|000111|2:50-3:30
+Happy Hands|000110|4:00-4:15
+SGF Academy|100100|5:20-6:00
+SODIC Academies|000100|6:15-6:30
+360 Clinics|110100|8:20-8:40
+Jailan Sarhan|100100|2:50-3:30
+Antie Joussy|100110|4:50-5:10
+Manal Diab Caricature|000100|2:30-3:00
+Xplain|000101|5:00-5:20
+Die Ratte|100101|6:35-6:50
+Juhu Kids|100110|6:30-6:45
+Barefoot Experience|010110|5:20-6:00
+Central Dance Studio|010101|2:30-3:00
+Art Theatre and Movement (ATM)|110110|4:00-4:15
+Motiv8|000101|7:45-8:00
+Baby Zone Fit|000110|7:45-8:00
+Leap Arcade|010110|2:50-3:30
+Sprout|000110|7:40-7:55
+Blooms Egypt|000111|3:35-3:55
+Michel Gerges|010101|2:00-2:30
+Hala Hassan|000111|2:30-3:00
+Nadia Gamal El-Din|100111|2:30-3:00
+Lee Chalkly|010110|2:30-3:00
+Seif Ramdan|011101|2:30-3:00
+Ziad Amir (Kids)|000100|2:45-3:00
+Basel (Kids)|000100|2:45-3:00
+Farah Rashwan (Kids)|000100|2:45-3:00
+Marwa Elmeligy|011101|8:45-9:00
+Sarah Nishihira|000101|5:00-5:20
+Amr Fahmy|011100|6:40-7:00
+Heidi Omar|010101|6:40-7:00
+Nancy Hany|100110|8:20-8:40
+Rania Raouf|010111|8:20-8:40
+Sherif Fashiry|010111|9:40-10:00
+Nada El Ghalban|110110|9:40-10:00
+Sama Alturk|110101|5:20-6:00
+Tarek Elsamni|010111|6:15-6:30
+Nahla Farouk|110101|7:45-8:00
+Omar Emam|000111|3:00-3:20
+Rasha El-Gouishy|101111|2:00-2:30
+Emy Abaza|110111|2:45-3:00
+Amr Ramdan|010111|4:50-5:10
+Seif Marzouk|010111|8:45-9:00
+Diana Roshdy|100101|4:00-4:15
+Rania Abdelaziz|110101|9:55-10:10
+Aisha Hassan|110110|2:50-3:30
+Abdelrahman Ezzat|010101|4:00-4:15
+Shaimaa Ghazaly|110101|10:00-10:15
+Ann Adham|100101|4:15-4:30
+Alia Mebed|110101|7:40-7:55
+Dina Sobhy|100111|3:15-3:30
+Mohamed El Dakkak|010101|2:30-3:00
+Zeina El Rayes|110111|6:35-6:50
+Khaled Dewan|010101|7:00-7:15
+Reham Allam|100111|7:40-7:55
+Sara Salem|110101|9:05-9:15
+Salma Elbehary|100101|7:45-8:00
+Nagwa Khedr|110111|9:05-9:15
+Miss Oly|110110|9:10-9:20
+Shaimaa Ali|010111|6:35-6:50
+Rana Hany|110111|9:10-9:20
+Mayada Elshahawy|100111|8:40-8:55
+Aya Taher|110110|8:40-8:55
+Alaa Bader|010101|9:15-9:30
+Khaled Elshinnawy|010101|8:45-9:00
+Dina Moamen|000111|8:45-9:00
+Mohamed Sadek|010110|7:05-7:20
+Rany Refaat|000001|7:05-7:20
+Mohamed Amr|010111|7:10-7:25
+Abdel Moneim El Shawarby|000111|7:10-7:25
+Ahmed ElLaithy|100111|7:15-7:30
+Ahmed Naguib|100110|3:10-3:25
+Chaima Tayssir|110100|4:25-4:40
+Dr. Sehar Salah|100110|5:30-6:10
+Dr Shaima Zakr|100100|8:05-8:20
+Hana Barakt|110101|4:50-5:50
+Joe Khayat|010110|9:30-9:45`;
+const NOWAH = {
+  'Shaimaa Ghazaly': '10:30 – 10:45', 'Nadia Gamal El-Din': '2:45 – 3:00', 'Miss Oly': '7:30 – 7:45',
+  'Sarah Nishihira': '5:45 – 6:00', 'Shaimaa Ali': '7:45 – 8:00', 'Reham Allam': '8:15 – 8:30',
+  'Mohamed El Dakkak': '7:00 – 7:15', 'Khaled Dewan': '5:00 – 5:15', 'Dina Sobhy': '4:15 – 4:30',
+  'Sara Salem': '9:30 – 9:45'
+};
+const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const PARTNERS = RAW.split('\n').map(line => {
+  const [name, bits, t] = line.split('|');
+  const media = MEDIA.filter((_, i) => bits[i] === '1').map(([n, c, ink]) => ({ name: n, color: c, ink, hasTime: false, time: '' }));
+  if (NOWAH[name]) media.push({ name: 'NOWAH Podcast', color: '#0b1351', ink: '#ffffff', hasTime: true, time: NOWAH[name] + ' PM' });
+  media.forEach((m, i) => { m.num = String(i + 1).padStart(2, '0'); });
+  const n = media.length;
+  return {
+    name, slug: slug(name), media,
+    window: t.replace('-', ' – '),
+    countLabel: n + (n === 1 ? ' interview' : ' interviews'),
+    nameSize: name.length > 24 ? '19pt' : '24pt'
+  };
+});
+
+class Component extends DCLogic {
+  componentDidMount() {
+    if (window.qrcode) return;
+    const s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js';
+    s.onload = () => { this._qr = {}; this.forceUpdate(); };
+    document.head.appendChild(s);
+  }
+  qr(url) {
+    if (!window.qrcode) return '';
+    this._qr = this._qr || {};
+    if (!this._qr[url]) {
+      const q = window.qrcode(0, 'M'); q.addData(url); q.make();
+      this._qr[url] = q.createDataURL(6, 0);
+    }
+    return this._qr[url];
+  }
+  renderVals() {
+    const urlP = new URLSearchParams(location.search).get('p');
+    const isWeb = !!urlP || (this.props.view ?? '').startsWith('Web');
+    const base = (this.props.qrBaseUrl || (location.origin + location.pathname)).replace(/\?.*$/, '');
+    const partners = PARTNERS.map((p, i) => ({
+      ...p, label: String(i + 1).padStart(2, '0') + ' ' + p.name,
+      qr: this.qr(base + '?p=' + p.slug)
+    })).map(p => ({ ...p, hasQr: !!p.qr }));
+    const key = urlP || slug(this.props.webPartner ?? 'SODIC');
+    const wp = PARTNERS.find(p => p.slug === key) || null;
+    return { isPrint: !isWeb, isWeb, partners, wp: wp || {}, found: !!wp, notFound: !wp };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="position:relative;width:100%;aspect-ratio:1800/960;background:#0b1351;border-radius:{{ radius }};overflow:hidden">
+<svg viewBox="580 220 1800 960" width="100%" height="100%" style="display:block" font-family="Figtree, sans-serif">
+  <defs>
+    <pattern id="em-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="2"></path></pattern>
+    <pattern id="em-lanes" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M0 7H14" stroke="#ffffff" stroke-opacity="0.55" stroke-width="2"></path></pattern>
+  </defs>
+  <rect x="580" y="220" width="1800" height="960" fill="url(#em-grid)"></rect>
+
+  <path d="M600 1075 Q900 1140 1300 1150 L2380 1095" fill="none" stroke="#ffffff" stroke-opacity="0.13" stroke-width="46"></path>
+  <path d="M600 1075 Q900 1140 1300 1150 L2380 1095" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="18 16"></path>
+  <text x="2360" y="1078" text-anchor="end" fill="#ffffff" fill-opacity="0.55" font-size="20" font-weight="700" letter-spacing="4">MAIN ROAD</text>
+
+  <path d="M620 330 L1250 245 L1830 290 L1880 520 L2290 545 L2355 790 L2320 1000 L1950 1060 L1500 1090 L1080 1095 L860 1050 L600 1010Z" fill="#131e6c" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2"></path>
+
+  <path d="M1450 1050 L1960 1040 Q2320 990 2335 780 Q2325 575 2100 535 L1860 530" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="30" stroke-linejoin="round"></path>
+  <path d="M1180 540 Q1220 720 1440 715 L1720 700 L1730 1040" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="30" stroke-linejoin="round"></path>
+
+  <rect x="740" y="255" width="500" height="265" rx="22" fill="#2b388c" stroke="#ffffff" stroke-opacity="0.25" stroke-width="2"></rect>
+  <rect x="830" y="300" width="290" height="160" rx="10" fill="#1b2677"></rect>
+  <text x="975" y="390" text-anchor="middle" fill="#ffffff" fill-opacity="0.7" font-size="22" font-weight="700" letter-spacing="2">SPORTS HALL</text>
+
+  <rect x="1345" y="300" width="150" height="80" rx="8" fill="#2b388c" stroke="#ffffff" stroke-opacity="0.2" stroke-width="2"></rect>
+  <rect x="1490" y="300" width="300" height="200" rx="12" fill="#2b388c" stroke="#ffffff" stroke-opacity="0.2" stroke-width="2"></rect>
+  <rect x="1440" y="505" width="200" height="60" rx="8" fill="#2b388c" stroke="#ffffff" stroke-opacity="0.2" stroke-width="2"></rect>
+  <text x="1700" y="345" text-anchor="middle" fill="#ffffff" fill-opacity="0.7" font-size="22" font-weight="700" letter-spacing="2">CLUB HOUSE</text>
+  <circle cx="1775" cy="490" r="46" fill="#2b388c" stroke="#ffffff" stroke-opacity="0.3" stroke-width="2"></circle>
+  <circle cx="1775" cy="490" r="28" fill="none" stroke="#ffffff" stroke-opacity="0.3" stroke-width="2"></circle>
+  <circle cx="1775" cy="490" r="10" fill="#ffffff" fill-opacity="0.3"></circle>
+
+  <rect x="935" y="525" width="275" height="265" rx="10" fill="#1d2873" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2"></rect>
+  <text x="1072" y="665" text-anchor="middle" fill="#ffffff" fill-opacity="0.4" font-size="18" font-weight="700" letter-spacing="3">OPEN AREA</text>
+
+  <rect x="715" y="665" width="265" height="255" rx="6" fill="#1f5a6e" fill-opacity="0.55" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"></rect>
+  <line x1="847" y1="665" x2="847" y2="920" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"></line>
+  <circle cx="847" cy="792" r="34" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"></circle>
+  <text x="847" y="700" text-anchor="middle" fill="#ffffff" fill-opacity="0.75" font-size="18" font-weight="700" letter-spacing="2">PITCH</text>
+
+  <rect x="602" y="782" width="120" height="62" rx="6" fill="#11D1D0" fill-opacity="0.7"></rect>
+  <rect x="602" y="782" width="120" height="62" rx="6" fill="url(#em-lanes)"></rect>
+  <rect x="616" y="852" width="125" height="62" rx="6" fill="#11D1D0" fill-opacity="0.7"></rect>
+  <rect x="616" y="852" width="125" height="62" rx="6" fill="url(#em-lanes)"></rect>
+  <text x="672" y="946" text-anchor="middle" fill="#11D1D0" font-size="20" font-weight="800" letter-spacing="2">POOLS</text>
+
+  <rect x="930" y="928" width="110" height="62" rx="4" fill="#3b5bd6" stroke="#ffffff" stroke-opacity="0.7" stroke-width="2"></rect>
+  <line x1="985" y1="928" x2="985" y2="990" stroke="#ffffff" stroke-opacity="0.7" stroke-width="2"></line>
+  <rect x="945" y="998" width="110" height="62" rx="4" fill="#3b5bd6" stroke="#ffffff" stroke-opacity="0.7" stroke-width="2"></rect>
+  <line x1="1000" y1="998" x2="1000" y2="1060" stroke="#ffffff" stroke-opacity="0.7" stroke-width="2"></line>
+  <text x="870" y="1000" text-anchor="end" fill="#8fa6ff" font-size="20" font-weight="800" letter-spacing="2">PLAY</text>
+  <text x="870" y="1024" text-anchor="end" fill="#8fa6ff" font-size="20" font-weight="800" letter-spacing="2">COURTS</text>
+
+  <rect x="1045" y="805" width="195" height="200" rx="6" fill="#d9c58a" fill-opacity="0.22" stroke="#ffffff" stroke-opacity="0.2" stroke-width="2"></rect>
+  <rect x="1260" y="760" width="180" height="240" rx="6" fill="#d9c58a" fill-opacity="0.22" stroke="#ffffff" stroke-opacity="0.2" stroke-width="2"></rect>
+  <text x="1245" y="1040" text-anchor="middle" fill="#e6d7a6" fill-opacity="0.85" font-size="18" font-weight="700" letter-spacing="2">SAND COURTS</text>
+  <rect x="1455" y="705" width="200" height="85" rx="6" fill="#ffffff" fill-opacity="0.06"></rect>
+
+  <path d="M1765 600 Q1785 545 1900 550 L2250 575 Q2325 605 2318 760 Q2305 935 2120 958 L1820 925 Q1735 878 1748 760Z" fill="#CBDF38" fill-opacity="0.1" stroke="#CBDF38" stroke-opacity="0.35" stroke-width="2"></path>
+  <text x="2090" y="590" text-anchor="middle" fill="#CBDF38" fill-opacity="0.8" font-size="18" font-weight="700" letter-spacing="3">GARDEN</text>
+
+  <path d="M1855 990 L1768 925 L1748 800 L1762 640 L1500 675 L1300 600" fill="none" stroke="#ffffff" stroke-width="7" stroke-dasharray="16 12" stroke-linecap="round" stroke-opacity="0.9"></path>
+
+  <path d="M1215 355 L1330 335 L1345 410 L1225 425Z" fill="#B92DE5"></path>
+  <path d="M1240 440 L1440 390 L1480 495 L1270 530Z" fill="#B92DE5" fill-opacity="0.85"></path>
+  <path d="M1272 548 L1310 543 L1316 582 L1280 588Z" fill="#F735A7"></path><path d="M1310 543 L1345 538 L1352 576 L1316 582Z" fill="#11D1D0"></path>
+  <path d="M1300 600 L1398 532 Q1422 580 1428 628 Q1345 640 1300 600Z" fill="#B92DE5" fill-opacity="0.85"></path>
+  <path d="M1480 830 L1650 795 L1670 880 L1500 915Z" fill="#B92DE5" fill-opacity="0.85"></path>
+  <path d="M1510 925 L1685 890 L1700 980 L1525 1010Z" fill="#B92DE5" fill-opacity="0.85"></path>
+  <path d="M1755 600 L1830 560 L1862 625 L1792 662Z" fill="#B92DE5" fill-opacity="0.85"></path>
+  <path d="M1705 742 L1745 735 L1762 800 L1736 838 L1700 792Z" fill="#B92DE5" fill-opacity="0.85"></path>
+  <path d="M1748 855 L1772 850 L1782 960 L1758 965Z" fill="#B92DE5" fill-opacity="0.85"></path>
+  <rect x="1812" y="968" width="86" height="36" rx="8" fill="none" stroke="#ffffff" stroke-width="5"></rect>
+  <rect x="1950" y="645" width="80" height="46" rx="10" fill="#B92DE5"></rect>
+  <rect x="1970" y="777" width="80" height="46" rx="10" fill="#B92DE5"></rect>
+  <rect x="2110" y="712" width="80" height="46" rx="10" fill="#B92DE5"></rect>
+  <ellipse cx="1880" cy="700" rx="92" ry="88" fill="#FB6F41"></ellipse>
+  <path d="M1960 640 Q2060 600 2160 625 Q2230 660 2215 760 Q2200 845 2080 850 Q1960 850 1935 780 Q1920 690 1960 640Z" fill="#CBDF38" fill-opacity="0.92"></path>
+  <path d="M2222 640 Q2305 690 2290 785 L2250 792 Q2258 700 2210 652Z" fill="#551FF8"></path>
+  <path d="M1790 835 Q1955 925 2125 862 L2135 902 Q1955 975 1784 876Z" fill="#B92DE5"></path>
+
+  <path d="M1855 1062 L1855 1012 M1840 1027 L1855 1010 L1870 1027" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <text x="1855" y="1088" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="800" letter-spacing="3">ENTRANCE</text>
+</svg>
+<sc-for list="{{ pins }}" as="p" hint-placeholder-count="16">
+  <div style="position:absolute;left:{{ p.left }};top:{{ p.top }};width:2.6%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:#fff;border:2px solid #0b1351;box-sizing:border-box;display:flex;align-items:center;justify-content:center;container-type:inline-size">
+    <span style="font-family:Figtree,sans-serif;font-weight:800;font-size:52cqw;line-height:1;color:#0b1351">{{ p.n }}</span>
+  </div>
+</sc-for>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:900,&quot;height&quot;:480},&quot;radius&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;16px&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+const PINS = [[1855,987],[1762,905],[1728,785],[1808,612],[1880,700],[1990,668],[2010,800],[2150,735],[2262,718],[1960,905],[1575,855],[1605,950],[1300,560],[1385,602],[1360,462],[1280,382],[1985,582]];
+class Component extends DCLogic {
+  renderVals() {
+    return { radius: this.props.radius ?? '16px', pins: PINS.map(([x, y], i) => ({ left: ((x - 580) / 1800 * 100).toFixed(2) + '%', top: ((y - 220) / 960 * 100).toFixed(2) + '%', n: String(i + 1) })) };
+  }
+}
+</script>
+</body>
+</html>
